@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<br><br>
+
+    <table class="table table-striped">
+        <tr class="active">
+            <th class="text-center">저장된 번호 </th>
+            <th class="text-center">날짜</th>
+            <th class="text-center">Actions</th>
+        </tr>
+        
+            {% for task in tasks %}
+            <tr>
+                <td>{{ task.num }}</td>
+                <td>{{ task.date }}</td>
+                <td>
+                    <a href="/delete/{{task.id}}">Delete</a>
+                    <br>
+                    <a href="/update/{{task.id}}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+       
+    </table>
+
+</div>
+{% endblock %}
